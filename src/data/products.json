@@ -1,0 +1,139 @@
+[
+  {
+    "id": "towel-001",
+    "name": "Premium Luxury Bath Towel",
+    "slug": "premium-luxury-bath-towel",
+    "description": "Made from 100% Cotton, this bath towel gives you a luxury hotel-like feel. Highly absorbent and super soft texture that is perfect for your skin.",
+    "shortDescription": "100% Pure Cotton, Extra Soft & Absorbent",
+    "basePrice": 120000,
+    "currency": "PKR",
+    "category": "towels",
+    "images": [
+      "/optimized_towel_portrait_500kb_940x.png",
+      "/nnnn_940x.png"
+    ],
+    "featured": true,
+    "bestSeller": true,
+    "trending": true,
+    "newArrival": true,
+    "variants": [
+      {
+        "id": "v1",
+        "name": "White",
+        "type": "color",
+        "value": "#FFFFFF",
+        "priceAdjustment": 0,
+        "inventory": { "available": 50, "sku": "BT-WHT-PRM" }
+      },
+      {
+        "id": "v2",
+        "name": "Grey",
+        "type": "color",
+        "value": "#808080",
+        "priceAdjustment": 10000,
+        "inventory": { "available": 30, "sku": "BT-GRY-PRM" }
+      }
+    ],
+    "specifications": {
+      "material": "100% Cotton",
+      "size": "70cm x 140cm",
+      "weight": "600 GSM",
+      "origin": "Pakistan"
+    }
+  },
+  {
+    "id": "towel-002",
+    "name": "Soft Hand Towel Set (Pack of 2)",
+    "slug": "soft-hand-towel-set",
+    "description": "Perfect hand towels for daily use. Featuring quick-dry technology that helps keep germs away.",
+    "shortDescription": "Quick Dry, Antibacterial Hand Towels",
+    "basePrice": 85000,
+    "currency": "PKR",
+    "category": "towels",
+    "images": [
+      "/nnnn_940x.png"
+    ],
+    "featured": true,
+    "newArrival": true,
+    "bestSeller": false,
+    "trending": true,
+    "variants": [
+      {
+        "id": "v3",
+        "name": "Blue",
+        "type": "color",
+        "value": "#0000FF",
+        "priceAdjustment": 0,
+        "inventory": { "available": 100, "sku": "HT-BLU-SET" }
+      }
+    ],
+    "specifications": {
+      "material": "Cotton Blend",
+      "size": "40cm x 60cm",
+      "weight": "450 GSM",
+      "origin": "Pakistan"
+    }
+  },
+  {
+    "id": "bathrobe-001",
+    "name": "Ultra-Soft Cotton Bathrobe",
+    "slug": "ultra-soft-cotton-bathrobe",
+    "description": "Premium bathrobe for maximum comfort after a shower. Lightweight and highly absorbent.",
+    "shortDescription": "Luxurious Cotton Bathrobe for Home & Spa",
+    "basePrice": 250000,
+    "currency": "PKR",
+    "category": "bathrobe",
+    "images": [
+      "/optimized_couple_500kb_940x.png"
+    ],
+    "featured": true,
+    "newArrival": true,
+    "bestSeller": true,
+    "variants": [
+      {
+        "id": "v4",
+        "name": "Standard",
+        "type": "size",
+        "value": "Large",
+        "priceAdjustment": 0,
+        "inventory": { "available": 20, "sku": "BR-L-WHT" }
+      }
+    ],
+    "specifications": {
+      "material": "Turkish Cotton",
+      "size": "One Size Fits Most",
+      "origin": "Pakistan"
+    }
+  },
+  {
+    "id": "kids-001",
+    "name": "Kids Hooded Towel - Fun Designs",
+    "slug": "kids-hooded-towel",
+    "description": "Adorable hooded towels for kids. Extra gentle on sensitive skin and super absorbent.",
+    "shortDescription": "Cute & Soft Hooded Towels for Toddlers",
+    "basePrice": 150000,
+    "currency": "PKR",
+    "category": "kids",
+    "images": [
+      "/optimized_kids_bathrobe_500kb_785x.png"
+    ],
+    "featured": true,
+    "newArrival": true,
+    "trending": true,
+    "variants": [
+      {
+        "id": "v5",
+        "name": "Blue Shark",
+        "type": "design",
+        "value": "Shark",
+        "priceAdjustment": 0,
+        "inventory": { "available": 40, "sku": "KT-SHARK" }
+      }
+    ],
+    "specifications": {
+      "material": "Microfiber Cotton",
+      "size": "60cm x 60cm",
+      "origin": "Pakistan"
+    }
+  }
+]

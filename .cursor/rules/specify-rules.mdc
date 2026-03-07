@@ -1,0 +1,30 @@
+﻿# towel Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-03-06
+
+## Active Technologies
+
+- JavaScript (ES6+), React 19.2.0, Node.js 18+ (for build tools) + React 19+, React Router, Framer Motion (animations), React Hook Form (forms), Zustand (state management), Stripe.js or PayPal SDK (payments), Tailwind CSS (styling) (001-towel-store)
+
+## Project Structure
+
+```text
+backend/
+frontend/
+tests/
+```
+
+## Commands
+
+npm test; npm run lint
+
+## Code Style
+
+JavaScript (ES6+), React 19.2.0, Node.js 18+ (for build tools): Follow standard conventions
+
+## Recent Changes
+
+- 001-towel-store: Added JavaScript (ES6+), React 19.2.0, Node.js 18+ (for build tools) + React 19+, React Router, Framer Motion (animations), React Hook Form (forms), Zustand (state management), Stripe.js or PayPal SDK (payments), Tailwind CSS (styling)
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

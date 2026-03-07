@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import HomePage from './pages/HomePage';
+import ProductListPage from './pages/ProductListPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import AccountPage from './pages/AccountPage';
+import ShippingPage from './pages/ShippingPage';
+import ReturnsPage from './pages/ReturnsPage';
+import FAQPage from './pages/FAQPage';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboard from './pages/AdminDashboard';
+import NotFoundPage from './pages/NotFoundPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'products', element: <ProductListPage /> },
+      { path: 'products/:id', element: <ProductDetailPage /> },
+      { path: 'category/:categoryId', element: <ProductListPage /> },
+      { path: 'cart', element: <CartPage /> },
+      { path: 'checkout', element: <CheckoutPage /> },
+      { path: 'order-confirmation/:orderId', element: <OrderConfirmationPage /> },
+      { path: 'about', element: <AboutPage /> },
+      { path: 'contact', element: <ContactPage /> },
+      {path: 'login', element: <LoginPage /> },
+      {path: 'signup', element: <SignupPage /> },
+      {path: 'account', element: <AccountPage /> },
+      {path: 'shipping', element: <ShippingPage /> },
+      { path: 'returns', element: <ReturnsPage /> },
+      { path: 'faq', element: <FAQPage /> },
+      { path: 'admin/login', element: <AdminLoginPage /> },
+      { path: 'admin/dashboard', element: <AdminDashboard /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "towels",
+    "name": "Towels",
+    "slug": "towels",
+    "description": "Premium quality towels",
+    "order": 1
+  },
+  {
+    "id": "bathrobe",
+    "name": "Bathrobe",
+    "slug": "bathrobe",
+    "description": "Comfortable bathrobes",
+    "order": 2
+  },
+  {
+    "id": "bed-essential",
+    "name": "Bed Essential",
+    "slug": "bed-essential",
+    "description": "Bedding essentials",
+    "order": 3
+  },
+  {
+    "id": "kids",
+    "name": "Kids",
+    "slug": "kids",
+    "description": "Kids products",
+    "order": 4
+  }
+]
+
+
+
