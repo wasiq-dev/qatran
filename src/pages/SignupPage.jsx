@@ -18,7 +18,7 @@ const SignupPage = () => {
     
     try {
       signup(formData);
-      addToast('Account created successfully! Welcome to Softique.', 'success');
+      addToast('Welcome to Qatran!', 'success');
       navigate('/account');
     } catch (err) {
       addToast(err.message || 'Signup failed', 'error');
@@ -45,7 +45,7 @@ const SignupPage = () => {
       >
         <div className="text-center">
           <Link to="/" className="text-3xl font-serif font-bold text-emerald-900 mb-4 block">
-            Softique<span className="text-accent">.</span>
+            Qatran<span className="text-accent">.</span>
           </Link>
           <h2 className="text-3xl font-serif font-bold text-slate-900 mb-2">Create Account</h2>
           <p className="text-slate-500 font-medium">
@@ -119,7 +119,7 @@ const SignupPage = () => {
               <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
             ) : (
               <>
-                <span>Create Secure Account</span>
+                Qatran Secure Authentication
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </>
             )}
@@ -127,7 +127,7 @@ const SignupPage = () => {
         </form>
 
         <p className="text-center text-[10px] text-slate-300 font-bold uppercase tracking-[0.2em] pt-4">
-          Join the Inner Circle • Softique
+          Join Inner Circle • Qatran
         </p>
       </motion.div>
     </div>

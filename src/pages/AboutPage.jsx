@@ -17,13 +17,13 @@ const AboutPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-24"
         >
-          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">The Softique Story</span>
+          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">The Qatran Story</span>
           <h1 className="text-4xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-tight">
             Crafting the Future of <br />
             <span className="italic font-normal">Everyday Comfort</span>
           </h1>
           <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
-            Born from a passion for premium textiles, Softique is dedicated to bringing the world-renowned quality of Pakistani cotton into the modern home.
+            Born from a passion for premium textiles, Qatran is dedicated to bringing the world-renowned quality of Pakistani cotton into the modern home.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Uncompromising Quality</h2>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                At Softique, we believe that luxury should be felt, not just seen. Every towel in our collection is woven from 100% long-staple cotton, ensuring superior absorbency and a cloud-like softness that lasts for years.
+                At Qatran, we believe that luxury should be felt, not just seen. Every towel in our collection is woven from 100% long-staple cotton, ensuring superior absorbency and a cloud-like softness that lasts for years.
               </p>
             </div>
             

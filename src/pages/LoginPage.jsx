@@ -18,7 +18,7 @@ const LoginPage = () => {
     
     try {
       login(formData.email, formData.password);
-      addToast('Welcome back to Softique!', 'success');
+      addToast('Welcome back to Qatran!', 'success');
       navigate('/account');
     } catch (err) {
       addToast(err.message || 'Invalid credentials', 'error');
@@ -45,7 +45,7 @@ const LoginPage = () => {
       >
         <div className="text-center">
           <Link to="/" className="text-3xl font-serif font-bold text-emerald-900 mb-4 block">
-            Softique<span className="text-accent">.</span>
+            Qatran<span className="text-accent">.</span>
           </Link>
           <h2 className="text-3xl font-serif font-bold text-slate-900 mb-2 text-center">Welcome Back</h2>
           <p className="text-slate-500 font-medium">
@@ -113,7 +113,7 @@ const LoginPage = () => {
         </form>
 
         <p className="text-center text-[10px] text-slate-300 font-bold uppercase tracking-[0.2em] pt-4">
-          Softique Secure Authentication
+          Qatran Secure Authentication
         </p>
       </motion.div>
     </div>
