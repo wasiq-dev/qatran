@@ -70,7 +70,7 @@ const AdminLoginPage = () => {
         </form>
         
         <p className="mt-10 text-center text-[10px] text-slate-300 font-bold uppercase tracking-[0.2em]">
-          Toliya.co Secure Portal
+          Softique Secure Portal
         </p>
       </motion.div>
     </div>

@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className={`text-2xl font-serif font-bold tracking-tight transition-colors ${scrolled || location.pathname !== '/' ? 'text-primary' : 'text-white'}`}>
-            Toliya<span className="text-accent">.</span>
+            Softique<span className="text-accent">.</span>
           </Link>
 
           {/* Desktop Nav */}

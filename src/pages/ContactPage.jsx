@@ -39,8 +39,8 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-xl text-slate-900 mb-2 group-hover:text-white transition-colors">Email Us</h3>
-                  <p className="text-slate-500 group-hover:text-white/70 transition-colors font-medium">support@toliya.co</p>
-                  <p className="text-slate-500 group-hover:text-white/70 transition-colors font-medium">concierge@toliya.co</p>
+                  <p className="text-slate-500 group-hover:text-white/70 transition-colors font-medium">concierge@softique.co</p>
+                  <p className="text-slate-500 group-hover:text-white/70 transition-colors font-medium">partners@softique.co</p>
                 </div>
               </div>
 
@@ -62,8 +62,8 @@ const ContactPage = () => {
                 <div>
                   <h3 className="font-serif font-bold text-xl text-slate-900 mb-2 group-hover:text-white transition-colors">Visit Our Studio</h3>
                   <p className="text-slate-500 group-hover:text-white/70 transition-colors font-medium leading-relaxed">
-                    Plot 123, Sector 15, <br />
-                    Korangi Industrial Area, <br />
+                    Softique Karachi Studio<br />
+                    DHA Phase 6, <br />
                     Karachi, Pakistan
                   </p>
                 </div>

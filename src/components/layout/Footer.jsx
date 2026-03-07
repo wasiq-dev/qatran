@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           {/* Brand Column */}
           <div className="md:col-span-4">
-            <Link to="/" className="text-3xl font-serif font-bold tracking-tight mb-8 block">
-              Toliya<span className="text-accent">.</span>
+            <Link to="/" className="text-3xl font-serif font-bold text-white mb-8 block">
+              Softique<span className="text-accent">.</span>
             </Link>
-            <p className="text-white/50 leading-relaxed mb-8 max-w-sm font-medium">
-              Crafting luxury textile essentials since 2025. We bring the unmatched softness of 100% pure Pakistani cotton to your home.
+            <p className="text-white/60 text-lg leading-relaxed mb-10 font-medium">
+              Elevating daily rituals with the world's finest, most sustainable cotton essentials.
             </p>
             <div className="flex items-center gap-6">
               {[Instagram, Facebook, Twitter].map((Icon, idx) => (

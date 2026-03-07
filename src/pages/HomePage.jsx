@@ -18,7 +18,7 @@ const HomePage = () => {
 
   const testimonials = [
     { name: "Ahmed Khan", role: "Verified Buyer", text: "The quality is outstanding! 100% cotton as promised, very soft and absorbent.", rating: 5 },
-    { name: "Saira Ali", role: "Frequent Shopper", text: "I've tried many brands, but Toliya.co is definitely the best in terms of value for money.", rating: 5 },
+    { name: "Saira Ali", role: "Frequent Shopper", text: "I've tried many brands, but Softique is definitely the best in terms of value for money.", rating: 5 },
     { name: "Zubair Shaikh", role: "Interior Designer", text: "Perfect for high-end projects. The colors are beautiful and the texture is premium.", rating: 5 }
   ];
 
