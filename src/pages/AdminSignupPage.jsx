@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Lock, ChevronLeft } from 'lucide-react';
+import { Lock, ChevronLeft, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const AdminLoginPage = () => {
+const AdminSignupPage = () => {
   const [formData, setFormData] = useState({
+    fullName: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -19,32 +22,53 @@ const AdminLoginPage = () => {
     });
   };
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
     setError('');
+    setSuccess('');
     setLoading(true);
 
     // Simulate API call delay
     setTimeout(() => {
-      // Check for registered admins
-      const admins = JSON.parse(localStorage.getItem('admins') || '[]');
-      
-      // Check if credentials match any registered admin
-      const admin = admins.find(a => a.email === formData.email && a.password === formData.password);
-      
-      if (admin) {
-        sessionStorage.setItem('isAdminAuthenticated', 'true');
-        sessionStorage.setItem('currentAdmin', JSON.stringify(admin));
-        navigate('/admin/dashboard');
-      } else if (formData.email === 'admin@qatran.com' && formData.password === 'admin123') {
-        // Fallback to default admin
-        sessionStorage.setItem('isAdminAuthenticated', 'true');
-        sessionStorage.setItem('currentAdmin', JSON.stringify({ fullName: 'Default Admin', email: 'admin@qatran.com' }));
-        navigate('/admin/dashboard');
-      } else {
-        setError('Incorrect email or password! Please try again.');
+      // Basic validation
+      if (!formData.fullName || !formData.email || !formData.password || !formData.confirmPassword) {
+        setError('All fields are required!');
+        setLoading(false);
+        return;
       }
+
+      if (formData.password !== formData.confirmPassword) {
+        setError('Password does not match!');
+        setLoading(false);
+        return;
+      }
+
+      if (formData.password.length < 6) {
+        setError('Password must be at least 6 characters!');
+        setLoading(false);
+        return;
+      }
+
+      // Store admin data (in real app, this would be sent to backend)
+      const adminData = {
+        fullName: formData.fullName,
+        email: formData.email,
+        password: formData.password,
+        createdAt: new Date().toISOString()
+      };
+
+      // Get existing admins or create new array
+      const existingAdmins = JSON.parse(localStorage.getItem('admins') || '[]');
+      existingAdmins.push(adminData);
+      localStorage.setItem('admins', JSON.stringify(existingAdmins));
+
+      setSuccess('Account created successfully! Please login.');
       setLoading(false);
+      
+      // Redirect to login after 2 seconds
+      setTimeout(() => {
+        navigate('/admin/login');
+      }, 2000);
     }, 1000);
   };
 
@@ -62,13 +86,26 @@ const AdminLoginPage = () => {
       >
         <div className="text-center mb-10">
           <div className="bg-emerald-50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-emerald-900 shadow-inner">
-            <Lock className="w-8 h-8" />
+            <UserPlus className="w-8 h-8" />
           </div>
-          <h1 className="text-3xl font-serif font-bold text-slate-900 mb-2">Admin Login</h1>
-          <p className="text-slate-500 font-medium">Enter your email and password</p>
+          <h1 className="text-3xl font-serif font-bold text-slate-900 mb-2">Admin Signup</h1>
+          <p className="text-slate-500 font-medium">Create new admin account</p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-6">
+        <form onSubmit={handleSignup} className="space-y-6">
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleInputChange}
+              className="w-full bg-slate-50 px-6 py-4 rounded-xl border border-slate-200 focus:ring-4 focus:ring-emerald-900/5 focus:border-emerald-900 outline-none transition-all font-medium"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
           <div className="space-y-2">
             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">Email</label>
             <input
@@ -90,7 +127,20 @@ const AdminLoginPage = () => {
               value={formData.password}
               onChange={handleInputChange}
               className="w-full bg-slate-50 px-6 py-4 rounded-xl border border-slate-200 focus:ring-4 focus:ring-emerald-900/5 focus:border-emerald-900 outline-none transition-all font-medium"
-              placeholder="••••••••"
+              placeholder="Strong password"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
+              className="w-full bg-slate-50 px-6 py-4 rounded-xl border border-slate-200 focus:ring-4 focus:ring-emerald-900/5 focus:border-emerald-900 outline-none transition-all font-medium"
+              placeholder="Re-enter password"
               required
             />
           </div>
@@ -105,6 +155,16 @@ const AdminLoginPage = () => {
             </motion.p>
           )}
 
+          {success && (
+            <motion.p 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-green-500 text-sm text-center font-bold"
+            >
+              {success}
+            </motion.p>
+          )}
+
           <button
             type="submit"
             disabled={loading}
@@ -113,16 +173,16 @@ const AdminLoginPage = () => {
             {loading ? (
               <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
             ) : (
-              <span>Authenticate</span>
+              <span>Create Account</span>
             )}
           </button>
         </form>
         
         <div className="mt-8 text-center">
           <p className="text-slate-500 text-sm">
-            Need to create an account?{' '}
-            <Link to="/admin/signup" className="text-emerald-900 hover:text-emerald-700 font-bold transition-colors">
-              Sign up here
+            Already have an account?{' '}
+            <Link to="/admin/login" className="text-emerald-900 hover:text-emerald-700 font-bold transition-colors">
+              Login here
             </Link>
           </p>
         </div>
@@ -135,4 +195,4 @@ const AdminLoginPage = () => {
   );
 };
 
-export default AdminLoginPage;
+export default AdminSignupPage;

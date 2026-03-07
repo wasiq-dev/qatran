@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="md:col-span-4">
             <Link to="/" className="text-3xl font-serif font-bold text-white mb-8 block">
-              Softique<span className="text-accent">.</span>
+              Qatran<span className="text-accent">.</span>
             </Link>
             <p className="text-white/60 text-lg leading-relaxed mb-10 font-medium">
               Elevating daily rituals with the world's finest, most sustainable cotton essentials.
@@ -65,16 +65,16 @@ const Footer = () => {
               <li className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-white/60 font-medium leading-relaxed">
-                  P 82 D University Town, Faisalabad, Pakistan
+                  123 Luxury Street, Fashion District, Karachi, Pakistan
                 </span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                <span className="text-white/60 font-medium">+92 322 0633722</span>
+                <span className="text-white/60 font-medium">+92 300 1234567</span>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                <span className="text-white/60 font-medium">toliya.care@gmail.com</span>
+                <span className="text-white/60 font-medium">info@qatran.com</span>
               </li>
             </ul>
           </div>
@@ -82,17 +82,12 @@ const Footer = () => {
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/30 text-xs font-bold uppercase tracking-widest">
-            &copy; 2025 Toliya.co Premium Essentials. All Rights Reserved.
+            &copy; 2025 Qatran Premium Essentials. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-8">
-            <Link to="/admin/login" className="text-white/20 hover:text-white/50 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors">
-              Owner Portal
-            </Link>
-            <div className="flex gap-4">
-              <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Visa" />
-              <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Mastercard" />
-              <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Cash on Delivery" />
-            </div>
+          <div className="flex gap-4">
+            <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Visa" />
+            <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Mastercard" />
+            <div className="w-8 h-5 bg-white/5 rounded border border-white/5" title="Cash on Delivery" />
           </div>
         </div>
       </div>

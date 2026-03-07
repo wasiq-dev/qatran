@@ -40,6 +40,7 @@ const CheckoutPage = () => {
       shipping: {
         address: values.address,
         city: values.city,
+        country: values.country,
         postalCode: values.postalCode,
       },
       payment: {
@@ -135,6 +136,26 @@ const CheckoutPage = () => {
                     {...register('address', { required: true, minLength: 5 })}
                     placeholder="House #, Street Name, Area"
                   />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">Country</label>
+                  <select
+                    className={`w-full bg-slate-50 px-6 py-4 rounded-xl border outline-none transition-all font-medium ${errors.country ? 'border-red-500' : 'border-slate-100 focus:border-emerald-900'}`}
+                    {...register('country', { required: true })}
+                    defaultValue="PK"
+                  >
+                    <option value="">Select Country</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="IN">India</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="LK">Sri Lanka</option>
+                  </select>
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">City</label>

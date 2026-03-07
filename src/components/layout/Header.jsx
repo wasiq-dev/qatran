@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className={`text-2xl font-serif font-bold tracking-tight transition-colors ${scrolled || location.pathname !== '/' ? 'text-primary' : 'text-white'}`}>
-            Softique<span className="text-accent">.</span>
+            Qatran<span className="text-accent">.</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -88,7 +88,7 @@ const Header = () => {
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       className="absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-10"
                     >
-                      <div className="p-2">
+                      <div className="p-2 max-h-64 overflow-y-auto">
                         {Object.keys(currencies).map((code) => (
                           <button
                             key={code}
@@ -166,7 +166,7 @@ const Header = () => {
           <div className="absolute inset-0 bg-luxury-900/60 backdrop-blur-md" onClick={() => setMobileMenuOpen(false)} />
           <div className="absolute top-0 right-0 bottom-0 w-[80%] max-w-sm bg-white p-8 shadow-2xl">
             <div className="flex justify-between items-center mb-12">
-              <span className="text-2xl font-serif font-bold text-primary">Toliya.</span>
+              <span className="text-2xl font-serif font-bold text-primary">Qatran.</span>
               <button onClick={() => setMobileMenuOpen(false)} className="text-luxury-400 hover:text-luxury-900">
                 <X className="w-6 h-6" />
               </button>

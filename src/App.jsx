@@ -15,6 +15,7 @@ import ShippingPage from './pages/ShippingPage';
 import ReturnsPage from './pages/ReturnsPage';
 import FAQPage from './pages/FAQPage';
 import AdminLoginPage from './pages/AdminLoginPage';
+import AdminSignupPage from './pages/AdminSignupPage';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       { path: 'returns', element: <ReturnsPage /> },
       { path: 'faq', element: <FAQPage /> },
       { path: 'admin/login', element: <AdminLoginPage /> },
+      { path: 'admin/signup', element: <AdminSignupPage /> },
       { path: 'admin/dashboard', element: <AdminDashboard /> },
       { path: '*', element: <NotFoundPage /> },
     ],
