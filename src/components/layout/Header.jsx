@@ -95,10 +95,6 @@ const Header = () => {
                             onClick={() => {
                               setCurrency(code);
                               setShowCurrencyDropdown(false);
-                              // Refresh the page to ensure all prices update globally
-                              setTimeout(() => {
-                                window.location.reload();
-                              }, 100);
                             }}
                             className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold transition-all ${
                               currentCurrency === code ? 'bg-emerald-900 text-white' : 'text-slate-600 hover:bg-slate-50'
