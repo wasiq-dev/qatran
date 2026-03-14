@@ -23,7 +23,7 @@ const currencies = {
 const useCurrencyStore = create(
   persist(
     (set, get) => ({
-      currentCurrency: 'PKR',
+      currentCurrency: 'USD',
       currencies,
       
       setCurrency: (code) => {
