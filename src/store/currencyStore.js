@@ -32,16 +32,16 @@ const useCurrencyStore = create(
         }
       },
 
-      formatPrice: (pkrAmount) => {
+      formatPrice: (pkrAmount, targetCurrency = null) => {
         const { currentCurrency } = get();
-        const currency = currencies[currentCurrency];
+        const currency = currencies[targetCurrency || currentCurrency];
         const converted = (pkrAmount / 100) * currency.rate; // Assuming pkrAmount is in paisas
         
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
-          currency: currentCurrency === 'PKR' ? 'PKR' : currentCurrency,
+          currency: targetCurrency || (currentCurrency === 'PKR' ? 'PKR' : currentCurrency),
           currencyDisplay: 'symbol',
-          minimumFractionDigits: currentCurrency === 'PKR' ? 0 : 2,
+          minimumFractionDigits: (targetCurrency || currentCurrency) === 'PKR' ? 0 : 2,
         }).format(converted);
       }
     }),

@@ -9,7 +9,7 @@ import useCurrencyStore from '../../store/currencyStore';
 const Header = () => {
   const itemCount = useCartStore(state => state.getItemCount());
   const { isAuthenticated, user } = useAuthStore();
-  const { currentCurrency, setCurrency, currencies } = useCurrencyStore();
+  const { currentCurrency, currencies, setCurrency, formatPrice } = useCurrencyStore();
   const location = useLocation();
   const navigate = useNavigate();
 
