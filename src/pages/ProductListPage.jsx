@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import useProductStore from '../store/productStore';
 import ProductCard from '../components/product/ProductCard';
 import { Filter, Grid, List, ChevronRight, X, Search } from 'lucide-react';
+import { formatPrice } from '../utils/formatters';
 
 const ProductListPage = () => {
   const { categoryId } = useParams();
