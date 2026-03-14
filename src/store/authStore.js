@@ -28,6 +28,29 @@ const useAuthStore = create(
         set({ user, isAuthenticated: true });
       },
 
+      // Google OAuth login
+      googleLogin: (googleUser) => {
+        const userData = {
+          id: Date.now().toString(),
+          fullName: googleUser.name,
+          email: googleUser.email,
+          password: 'google_oauth_' + Date.now(), // Mock password for Google users
+          createdAt: new Date().toISOString()
+        };
+        
+        // Save Google user to localStorage
+        const users = JSON.parse(localStorage.getItem('mock_users') || '[]');
+        if (users.find(u => u.email === googleUser.email)) {
+          // User already exists, just login
+          set({ user: users.find(u => u.email === googleUser.email), isAuthenticated: true });
+        } else {
+          // New Google user, save to mock users
+          users.push(userData);
+          localStorage.setItem('mock_users', JSON.stringify(users));
+          set({ user: userData, isAuthenticated: true });
+        }
+      },
+
       logout: () => {
         set({ user: null, isAuthenticated: false });
       },
