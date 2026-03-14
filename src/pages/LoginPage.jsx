@@ -90,11 +90,36 @@ const LoginPage = () => {
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-emerald-900/5 focus:border-emerald-900 transition-all font-medium"
-                  placeholder="••••••••"
+                  placeholder="••••••"
                 />
               </div>
             </div>
           </div>
+
+          {/* Google Login Option */}
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-slate-200"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-4 text-slate-500 font-medium">OR</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              // Google OAuth login logic here
+              addToast('Google login coming soon!', 'info');
+            }}
+            className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-white border border-slate-200 rounded-2xl hover:bg-slate-50 transition-all font-medium text-slate-700 hover:text-slate-900"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285f4" d="M22.56 12.25c0-.78-.35-1.5-.88-1.5-1.5h-3c0 .83.67 1.5 1.5v3c0 .83-.67 1.5-1.5h3c.83 0 1.5.67 1.5v-3c0-.83-.67-1.5-1.5h-3zm1.5 1.5c0 .83.67 1.5 1.5v3c0 .83-.67 1.5-1.5h3c.83 0 1.5.67 1.5v-3c0-.83-.67-1.5-1.5h-3z"/>
+              <path fill="#34a853" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09 0-1.83.73-2.13 2.13-2.13 0 1.54-.58 2.09-1.36.04-1.36-.04-1.36-1.36z"/>
+            </svg>
+            Continue with Google
+          </button>
 
           <button
             type="submit"
